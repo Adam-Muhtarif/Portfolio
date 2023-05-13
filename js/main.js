@@ -75,3 +75,8 @@ window.addEventListener("scroll", () => {
     document.querySelector("nav .contact").classList.add("active");
   }
 });
+
+// Menu Button
+document.querySelector("nav .links + div").addEventListener("click", () => {
+  document.querySelector(".mobile-nav").classList.toggle("hide");
+});

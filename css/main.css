@@ -2,7 +2,6 @@
 :root {
   --main-color: #ffbd39;
 }
-
 /* Components */
 .btn {
   padding: 14px 25px;
@@ -89,6 +88,13 @@ header.addBackground {
   margin: 0;
   z-index: 100000;
 }
+.mobile-nav.hide {
+  display: none;
+}
+.mobile-nav {
+  padding: 0 15px;
+  transform: translateY(10px);
+}
 nav {
   display: flex;
   align-items: center;
@@ -105,18 +111,22 @@ nav .links {
   align-items: center;
   gap: 20px;
 }
-nav .links li a {
+nav .links li a,
+.mobile-nav .links li a {
   font-size: 18px;
-  padding: 5px;
   position: relative;
-  display: flex;
-  justify-content: center;
   padding: 0.7rem;
 }
-nav .links li a:hover {
+.mobile-nav .links li a {
+  display: block;
+  padding: 0 0 1rem;
+}
+nav .links li a:hover,
+.mobile-nav .links li a:hover {
   color: var(--main-color);
 }
-nav .links li a::before {
+nav .links li a::before,
+.mobile-nav .links li a::before {
   content: "";
   position: absolute;
   width: 0;
@@ -125,9 +135,10 @@ nav .links li a::before {
   opacity: 0;
   transition: 0.3s;
 }
-nav .links li a:hover::before {
+nav .links li a:hover::before,
+.mobile-nav .links li a:hover:before {
   opacity: 1;
-  width: 80%;
+  width:60px;
 }
 nav .links li a.active {
   color: var(--main-color);
@@ -499,6 +510,7 @@ nav .links + div span {
 #projects .text-content h3 {
   margin: 0;
   font-weight: normal;
+  text-align: center;
 }
 #projects .box span {
   letter-spacing: 3px;
@@ -643,7 +655,7 @@ nav .links + div span {
 /* End Banner */
 
 /* Contact */
-.container:nth-of-type(2) {
+body .container:last-of-type {
   margin-top: 150px;
 }
 #contact {
@@ -960,7 +972,7 @@ nav .links + div span {
     padding: 10px 15px;
   }
   nav .links {
-    display: none;
+    /* display: none; */
   }
   nav .links + div {
     display: block;
@@ -1121,6 +1133,9 @@ nav .links + div span {
   #blog .box {
     width: 100%;
     margin-bottom: 30px;
+  }
+  #stats {
+    transform: translateY(0);
   }
   #stats .wrapper {
     display: block;
