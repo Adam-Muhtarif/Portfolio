@@ -150,11 +150,13 @@ nav .links li a.active::before {
 nav .links + div {
   display: none;
   font-size: 16px;
+  align-items: center;
+  gap: 2px;
+  color: #999999;
 }
 nav .links + div span {
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #999999;
 }
 /* End Header */
 
@@ -1060,7 +1062,7 @@ body .container:last-of-type {
     display: none;
   }
   nav .links + div {
-    display: block;
+    display: flex;
   }
   .container {
     max-width: 540px;
